@@ -1,0 +1,38 @@
+Attendees:
+Ankur Anand
+Amar Akshat
+
+Agenda:
+Android Trophies
+
+Discussion:
+
+Like PS3 and XBOX, there is a requirement for a framework to have Android
+trophies. The Android trophies project will serve as a baseline for Android
+game developers across the world.
+
+The Android trophies will allow, games to award trophies and points to all
+the gamers across the world, and they can chart themselves globally with
+respect to gamers playing all different kind of games (all using Andtrophies),
+globally ! This is will give them their "Gamer-Rank", which will be 
+irrespective of the game he/she is playing.
+
+Components.
+
+* Authentication, -- we need to uniquely identify each developer with their
+                     private key/public key. This will be a server side
+                     authentication, and in the web api the developer will pass
+                     his public key, timestamp and signature.
+
+* Backend Web service, -- HTTP/JSON based, request response. Implementation,
+                          Node/Javascript, or Python/Django.
+                          This will receive requests in our custom API from
+                          the android service.
+
+* Android service, -- Will take request from the local app and sync it directly
+                      with our servers, running the backend web service.
+                      Can perform basic verification, validation.
+
+* Visual App/Widget, -- This will be a "fancy" application on Android and/or
+                        a widget, which will display gamer's ranks/points/
+                        trophies, and will be served by Android Service.
