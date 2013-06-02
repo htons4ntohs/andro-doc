@@ -1,0 +1,24 @@
+Authentication/Verification.
+
+The first component of our framework is authentication.
+
+* Every game developer who uses our trophy framework, needs to register with us.
+* In the process of registration, we generate a key-pair for him,
+  i.e. a set of private and public key pair.
+* While sending any requests, the game sends us the 
+        -- public key (which should be embedded in the game binary ideally), 
+        -- a signature, with a seed based on the private key and timestamp (t),
+        -- timestamp (t).
+
+* The idea is, four function f(x) makes the following pair complimentary,
+
+        F1(private_key, timestamp) = Sig1
+        F2(public_key,  timestamp) = Sig2
+
+        F3(Sig1, Sig2) = 0
+
+* This way we do not maintain any private key, and just have to invest thought
+  on generating the keys and making them work with above calculation.
+
+* We also need a custom algorithm for having F1, F2 and F3.
+
